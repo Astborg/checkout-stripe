@@ -16,7 +16,7 @@ const Confirmation = () => {
                     sessionId = JSON.parse(dataFromLs)
                 }
                 console.log(sessionId)
-                const response = await fetch("http://localhost:3001/payments/verify-session", {
+                const response = await fetch("http://localhost:3005/payments/verify-session", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json"

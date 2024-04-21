@@ -11,7 +11,7 @@ const authRouter = require("./resources/auth/auth.router")
 const app = express()
 
 app.use(cors({
-    origin: "http://localhost:5173",
+    origin: "http://localhost:5174",
     credentials: true
 }))
 
@@ -31,4 +31,4 @@ app.use('/api', productRouter)
 app.use('/payments', verifyRouter)
 app.use('/api', registerRouter)
 
-app.listen(3001, () => console.log('Server is up running...'))
+app.listen(3005, () => console.log('Server is up running...'))

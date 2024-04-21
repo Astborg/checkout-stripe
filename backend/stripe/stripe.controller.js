@@ -59,7 +59,7 @@ async function updateProductPrices(productsData, stripe) {
 
 const createCheckoutSession = async (req, res) => {
   
-  const { lineItems } = req.body;
+  const { lineItems, emailStorage} = req.body;
  
   const stripe = initStripe()
   
@@ -68,8 +68,9 @@ const createCheckoutSession = async (req, res) => {
 
     line_items: lineItems,
 
-    success_url: "http://localhost:5173/confirmation",
-    cancel_url: "http://localhost:5173",
+    success_url: "http://localhost:5174/confirmation",
+    cancel_url: "http://localhost:5174",
+    customer_email: emailStorage
   })
 
 res.status(200).json({url: session.url, sessionId: session.id})

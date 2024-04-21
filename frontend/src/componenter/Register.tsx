@@ -8,7 +8,7 @@ export default function Register({ user }: any) {
   const handleRegister = async () => {
     try {
       const response = await axios.post(
-        'http://localhost:3001/api/register',
+        'http://localhost:3005/api/register',
         {
           email: email,
           password: password
@@ -19,6 +19,8 @@ export default function Register({ user }: any) {
         }
       );
       console.log(response.data);
+
+      
       
     } catch (error) {
       console.log('Registreringen misslyckades', error);

@@ -9,7 +9,7 @@ export default function Login({user, setUser}: any) {
   const handleLogin = async () => {
      try {
       const response = await axios.post(
-        'http://localhost:3001/api/auth/login',
+        'http://localhost:3005/api/auth/login',
         {
           email: email,
           password: password
@@ -20,6 +20,7 @@ export default function Login({user, setUser}: any) {
         }
       );
       console.log(response.data);
+      localStorage.setItem('registeredEmail', email)
       const data = await response.data
       if(response.status === 200) {
         setUser(data)
@@ -38,7 +39,7 @@ export default function Login({user, setUser}: any) {
     const checkLoggedInStatus = async () => {
       try {
         const response = await axios.get(
-          'http://localhost:3001/api/auth/amILoggedIn',
+          'http://localhost:3005/api/auth/amILoggedIn',
           { withCredentials: true }
         );
         if (response.status === 200 && response.data !== "") {

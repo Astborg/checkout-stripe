@@ -27,7 +27,7 @@ export default function Store(){
     useEffect(() => {
         async function fetchProducts() {
             try {
-                const response = await fetch('http://localhost:3001/api/products');
+                const response = await fetch('http://localhost:3005/api/products');
                 const data = await response.json();
                 setProducts(data.products.map((product: Product) => ({
                     ...product,
@@ -69,19 +69,19 @@ export default function Store(){
         try {
             const selectedProducts = products.filter(product => product.selected)
             localStorage.setItem('selectedProducts', JSON.stringify(selectedProducts))
-            
+            const emailStorage = localStorage.getItem('registeredEmail')
             const lineItems = selectedProducts.map(product => ({
-            
+
                 price: product.priceID, 
                 quantity: product.quantity
             }));
             console.log(lineItems)
-            const response = await fetch('http://localhost:3001/payments/create-checkout-session', {
+            const response = await fetch('http://localhost:3005/payments/create-checkout-session', {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
                 },
-                body: JSON.stringify({ lineItems })
+                body: JSON.stringify({ lineItems, emailStorage})
             });
     
             // Hantera svaret från backenden

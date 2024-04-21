@@ -8,7 +8,7 @@ export default function Logout({user, setUser}:any) {
  
   const handleLogout = async () => {
      try {
-      const response = await axios.post('http://localhost:3001/api/auth/logout', 
+      const response = await axios.post('http://localhost:3005/api/auth/logout', 
       {withCredentials: true 
       })
       console.log(response.data)
@@ -26,7 +26,7 @@ export default function Logout({user, setUser}:any) {
     const checkLoggedInStatus = async () => {
       try {
         const response = await axios.get(
-          'http://localhost:3001/api/auth/amILoggedIn',
+          'http://localhost:3005/api/auth/amILoggedIn',
           { withCredentials: true }
         );
         if (response.status === 200) {

@@ -1,15 +1,15 @@
 [
     {
-        "orderNummer": 397538,
+        "orderNummer": 898499,
         "customerName": "Daddy",
         "products": [
             {
-                "id": "li_1P3E17EGk7e8lKhxph8amcIS",
+                "id": "li_1P7x43EGk7e8lKhx1LeETAig",
                 "object": "item",
                 "amount_discount": 0,
-                "amount_subtotal": 16000,
+                "amount_subtotal": 20000,
                 "amount_tax": 0,
-                "amount_total": 16000,
+                "amount_total": 20000,
                 "currency": "sek",
                 "description": "Gelehallon",
                 "price": {
@@ -33,10 +33,10 @@
                     "unit_amount": 4000,
                     "unit_amount_decimal": "4000"
                 },
-                "quantity": 4
+                "quantity": 5
             }
         ],
-        "total": 16000,
-        "date": "2024-04-08T08:57:53.898Z"
+        "total": 20000,
+        "date": "2024-04-21T09:52:57.832Z"
     }
 ]
