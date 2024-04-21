@@ -1,6 +1,10 @@
 [
   {
+    "email": "daddy@gmail.com",
+    "password": "$2b$10$oGowpqkB9.uaKcACzo/ZHunenSKlDjV.Wy1DsaaKD3vOcYTLiGZ.e"
+  },
+  {
     "email": "nova@gmail.com",
-    "password": "$2b$10$bt.RqGu81J3S2OOE7AKl2.XJcerd2MVw8Qb2uDNbVJA8OKViFo9KW"
+    "password": "$2b$10$GOVnwMr9nd7V2NgNhA664uXeMYL.3bdZk6zZAWlnGtpHB3KJA2NFi"
   }
 ]

@@ -153,7 +153,7 @@ const register = async (req, res) => {
     
     let customers = [];
     try {
-        const data = fs.readFile('customers.json');
+        const data = await fs.readFile('customers.json');
         customers = JSON.parse(data);
     } catch (error) {
        
@@ -163,7 +163,13 @@ const register = async (req, res) => {
     customers.push(registerCustomer);
 
    
-    fs.writeFile('customers.json', JSON.stringify(customers, null, 2));
+    try {
+      await fs.writeFile('customers.json', JSON.stringify(customers, null, 2));
+      console.log('New user registered and added to customers.json');
+  } catch (error) {
+      console.error('Error writing customers data:', error);
+  }
+  res.status(200).json({ success: true });
 }
 
 
